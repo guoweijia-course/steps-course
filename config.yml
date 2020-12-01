@@ -7,6 +7,18 @@ before:
   - type: createIssue
     title: Welcome!
     body: new-issue.md
+  - type: createIssue
+    title: create my issue
+    body: my-issue.md
+  - type: createLabel
+    name: new label
+    color: '#409eff'
+    description: label
+  - type: createFile
+    filename: 初始化时新建的文件
+    branch: master
+    message: 新建文件
+    new_name: new name
 steps:
   - title: First step
     description: The first step in your course
@@ -14,3 +26,15 @@ steps:
     link: '{{ repoUrl }}'
     actions:
       - type: closeIssue
+      - type: createFile
+        filename: step1时新建的file
+        branch: master
+        message: step1时新建的file
+        new_name: new name的作用域
+  - title: Step2
+    actions:
+      - type: createIssue
+        title: step2时新建的issue
+        body: step2-issue.md
+    description: step2
+    link: '{{ repoUrl }}'
